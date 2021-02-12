@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+:root {
+  --color1: tomato;
+  --color2: rgb(172, 167, 167);
+  --font1: "Quicksand", sans-serif;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 2fr;
+
+  grid-template-areas:
+    "h1"
+    "h2";
+}
+
+header > h1 {
+  grid-area: h1;
+  margin-left: 153px;
+}
+
+header h1 a {
+  color: var(--color1);
+  text-decoration: none;
+}
+
+header .head {
+  grid-area: h2;
+  text-align: center;
+}
+
+header .head {
+  display: grid;
+  grid-template-columns: 4fr 4fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "h21 h22";
+}
+
+header .head h3 {
+  grid-area: h21;
+  margin-top: 27px;
+}
+
+header .head nav {
+  grid-area: h22;
+  margin-top: 17px;
+  margin-right: 100px;
+}
+
+header .head nav a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 23px;
+  color: black;
+}
+
+header .head nav a:hover {
+  color: var(--color1);
+}
+
+.pageTitle {
+  grid-area: m1;
+}
+
+.para {
+  grid-area: m2;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.mainBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 20% 80%;
+  grid-template-areas:
+    ". m1 m1 . . ."
+    ". m2 m2 m2 m2 .";
+}
+
+footer > p {
+  grid-area: f1;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". f1 .";
+}
+
+.belowHead {
+  width: 80%;
+  margin: auto;
+  border-top: 3px solid #8c8b8b;
+}
+
+header {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mainBody {
+  grid-area: body;
+}
+
+.belowHead {
+  grid-area: hr;
+  margin-top: 30px;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* vh element fixes header position in all the pages while the content that can increase or decrease with site usages are in % so that they can change values relative to the site size */
+  grid-template-rows: 20vh 7vh 75% 10%;
+  grid-template-areas:
+    "header"
+    "hr"
+    "body"
+    "footer";
+}
+
+body {
+  height: 200%;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form label,
+input,
+button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 40%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+form button {
+  margin-top: 20px;
+  min-width: 10%;
+  background-color: var(--color2);
+  font-weight: bolder;
+  font-size: large;
+  color: white;
+  border: 2px solid black;
+  border-radius: 7px;
+  font-family: var(--font1);
+}
+
+form button:hover {
+  background-color: var(--color1);
+}
+
+/* for mobile phones ------------------------------------------------------ */
+@media only screen and (max-width: 600px) {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  header h1 {
+    text-align: center;
+    margin-left: 0px;
+    margin: auto;
+  }
+
+  header .head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  header .head nav {
+    margin-right: 0%;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .mainBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+  }
+
+  form {
+    width: 120%;
+  }
+
+  form button {
+    width: 39%;
+  }
+}

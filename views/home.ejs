@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <style>
+        <%- myCss.style %>
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="./home.html">BLOG NINJA</a>
+        </h1>
+        <div class="head">
+            <h3>A NET NINJA SITE</h3>
+            <nav>
+                <a href="./home.html">BLOG</a>
+                <a href="./about.html">ABOUT</a>
+                <a href="./newBlog.html">NEW BLOG</a>
+            </nav>
+        </div>
+
+    </header>
+
+    <hr class=belowHead>
+
+    <div class="mainBody">
+        <div class="pageTitle">
+            <h2>All Blogs</h2>
+        </div>
+
+        <div class="para">
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi voluptatem laboriosam temporibus error
+                distinctio in voluptatum impedit itaque similique eius nostrum quam fuga recusandae totam beatae cum
+                ducimus
+                earum, eligendi esse vel doloremque molestias. Hic tempore voluptates sapiente repellat laudantium minus
+                dolorum quisquam, quidem accusantium!
+            </p>
+
+            <% let i=0; %>
+                <% if (blogs.length>0){ %>
+                    <% for( i=0; i<blogs.length; i++){ %>
+
+                        <h3>
+                            <%= blogs[i].title; %>
+                        </h3>
+                        <p>
+                            <%= blogs[i].snippet; %>
+                        </p>
+                        <% }} else{ %>
+                            <p>
+                                No blogs found
+                            </p>
+                            <% } %> 
+
+        </div>
+    </div>
+
+    <footer>
+        <p> Copyright &copy; Blog Ninja 2020</p>
+    </footer>
+</body>
+
+</html>

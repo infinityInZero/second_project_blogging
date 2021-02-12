@@ -1,0 +1,15 @@
+                <% let i=0; %>
+                <% if (blogs.length>0){ %>
+                    <% for( i=0, i<blogs.length, i++){ %>
+
+                        <h3>
+                            <% =blogs[i].title %>
+                        </h3>
+                        <p>
+                            <% =blogs[i].snippet %>
+                        </p>
+                        <% }} else{ %>
+                            <p>
+                                <% No blogs found %>
+                            </p>
+                            <% } %> 
